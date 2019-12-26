@@ -1,2 +1,9 @@
+export const AUTH_ERROR = 'AUTH_ERROR';
+export const AUTH_BEGIN_GETPID = 'AUTH_BEGIN_GETPID';
+export const AUTH_SUCCESS_GETPID = 'AUTH_SUCCESS_GETPID';
+export const AUTH_BEGINLOGIN = 'AUTH_BEGINLOGIN';
 export const AUTH_SUCCESS = 'AUTH_SUCCESS';
-export const AUTH_LOGOUT = 'AUTH_LOGOUT';
+
+export const DOCS_BEGIN = 'DOCS_BEGIN';
+export const DOCS_ERROR = 'DOCS_ERROR';
+export const DOCS_SUCCESS = 'DOCS_SUCCESS';

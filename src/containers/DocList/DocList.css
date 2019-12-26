@@ -1,9 +1,10 @@
-.Auth {
+.DocList {
     display: flex;
     justify-content: center;
-    padding-top: 100px;
+    padding-top: 20px;
     flex-grow: 1;
     width: 100%;
+    background-color: #eee;
 }
 
 .Auth > div {
@@ -15,11 +16,4 @@
 .Auth h1 {
     color: red;
     text-align: center;
-}
-
-.AuthForm {
-    background: #eee;
-    box-shadow: 2px 2px 2px rgba(0,0,0,.5);
-    border-radius: 5px;
-    padding: 15px;
 }

@@ -13,7 +13,6 @@ const Input = props => {
     if (isInvalid(props)) {
         cls.push(classes.invalid);
     }
-
     return (
         <div className={cls.join(' ')}>
             <label htmlFor={htmlFor}>{props.label}</label>
@@ -22,6 +21,8 @@ const Input = props => {
                 id={htmlFor}
                 value={props.value}
                 onChange={props.onChange}
+                disabled={props.disabled}
+                maxLength={props.maxLength}
             />
             {
                 isInvalid(props)
