@@ -4,6 +4,8 @@
     <list default="true" id="1a8d0e06-118e-4f70-881d-51d71eafb4ff" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/DocList/DocList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/DocList/DocList.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/DocList/DocList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/DocList/DocList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/DocView/DocView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/DocView/DocView.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +75,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1577347220075</updated>
-      <workItem from="1577347221271" duration="49541000" />
+      <workItem from="1577347221271" duration="50121000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1577353643953</created>
@@ -145,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577462371668</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="thead">
+      <created>1577462769225</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1577462769225</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,10 +174,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="712" y="334" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1577374191205" />
-    <state x="598" y="122" key="CommitChangelistDialog2" timestamp="1577462370984">
+    <state x="598" y="122" key="CommitChangelistDialog2" timestamp="1577462768551">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="598" y="122" key="CommitChangelistDialog2/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1577462370984" />
+    <state x="598" y="122" key="CommitChangelistDialog2/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1577462768551" />
     <state x="2518" y="125" key="CommitChangelistDialog2/0.0.1920.1050/1920.0.1920.1080@1920.0.1920.1080" timestamp="1577460312815" />
     <state x="740" y="282" key="FileChooserDialogImpl" timestamp="1577347377512">
       <screen x="0" y="0" width="1920" height="1050" />
@@ -190,10 +199,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1898" height="204" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1577452187813" />
-    <state x="552" y="260" key="Vcs.Push.Dialog.v2" timestamp="1577462373665">
+    <state x="552" y="260" key="Vcs.Push.Dialog.v2" timestamp="1577462775060">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="260" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1577462373665" />
+    <state x="552" y="260" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1577462775060" />
     <state x="2472" y="267" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1080@1920.0.1920.1080" timestamp="1577460316398" />
   </component>
 </project>

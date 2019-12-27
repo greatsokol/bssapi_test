@@ -30,7 +30,7 @@ class DocView extends Component {
                 <span>в банке <strong>{fields.receiverbankname}</strong>, БИК <strong>{fields.receiverbic}</strong></span>
                 <hr/>
                 <span>Назначение платежа: <strong>{fields.ground}</strong></span>
-                <Button type="success" onClick={this.onCloseDocumentHandler}>Закрыть</Button>
+                <Button type="primary" onClick={this.onCloseDocumentHandler}>Закрыть</Button>
             </div>
         );
     };

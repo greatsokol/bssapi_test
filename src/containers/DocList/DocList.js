@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import {getList, selectIdr} from "../../store/actions/doclist";
 import Loader from "../../components/Loader/Loader";
 import DocLine from "../../components/DocLine/DocLine";
+import Button from "../../components/Button/Button";
 
 class DocList extends Component {
     fieldNames = {
@@ -56,10 +57,16 @@ class DocList extends Component {
         )
     };
 
+    onLogoutHandler = () =>{
+        sessionStorage.removeItem('sid');
+        this.props.history.go('/');
+    };
+
     renderRecords = () => {
         return (
             <div className={classes.DocListForm}>
                 <h1>Список документов</h1>
+                <Button type="primary" onClick={this.onLogoutHandler}>Выйти</Button>
                 <hr/>
                 <table>
                     {this.renderHead()}
