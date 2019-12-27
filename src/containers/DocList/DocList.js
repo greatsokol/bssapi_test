@@ -16,12 +16,14 @@ class DocList extends Component {
     }
 
     onClickHandler = (event) => {
+        event.preventDefault();
         this.setState({
             selectedRecordId : event.target.parentNode.getAttribute('recordid')
         });
     };
 
     onDoubleClickHandler = (event) => {
+        event.preventDefault();
         this.props.history.push(`/doc/${this.state.selectedRecordId}`);
     };
 

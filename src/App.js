@@ -8,8 +8,6 @@ import DocView from "./containers/DocView/DocView";
 
 class App extends Component {
   render () {
-      console.log('App.render');
-
       let routes = (
         <Switch>
             <Route path="/auth" component={Auth}/>
