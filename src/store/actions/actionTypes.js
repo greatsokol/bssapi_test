@@ -7,3 +7,7 @@ export const AUTH_SUCCESS = 'AUTH_SUCCESS';
 export const DOCS_BEGIN = 'DOCS_BEGIN';
 export const DOCS_ERROR = 'DOCS_ERROR';
 export const DOCS_SUCCESS = 'DOCS_SUCCESS';
+
+export const DOC_BEGIN = 'DOC_BEGIN';
+export const DOC_ERROR = 'DOC_ERROR';
+export const DOC_SUCCESS = 'DOC_SUCCESS';

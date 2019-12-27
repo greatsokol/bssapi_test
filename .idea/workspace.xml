@@ -2,35 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a8d0e06-118e-4f70-881d-51d71eafb4ff" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/env.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/jest/cssTransform.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/jest/fileTransform.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/modules.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/paths.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/pnpTs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/webpack.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/webpackDevServer.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/build.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/start.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/axios/axios.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Loader/Loader.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Loader/Loader.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/DocList/DocList.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/DocList/DocList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/actions/doclist.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/reducers/doclist.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/DocLine/DocLine.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/DocLine/DocLine.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/DocView/DocView.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/DocView/DocView.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/actions/docview.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/reducers/docview.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Input/Input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input/Input.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Auth/Auth.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Auth/Auth.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Auth/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Auth/Auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Loader/Loader.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Loader/Loader.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/DocList/DocList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/DocList/DocList.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/DocList/DocList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/DocList/DocList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/actions/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/actionTypes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/reducers/rootReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/rootReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +84,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1577347220075</updated>
-      <workItem from="1577347221271" duration="24509000" />
+      <workItem from="1577347221271" duration="41555000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1577353643953</created>
@@ -109,7 +93,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577353643953</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="auth ready&#10;doclist in work">
+      <created>1577373486833</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1577373486833</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,17 +108,18 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial" />
+    <MESSAGE value="auth ready&#10;doclist in work" />
+    <option name="LAST_COMMIT_MESSAGE" value="auth ready&#10;doclist in work" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="712" y="334" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1577348383291">
+    <state x="712" y="334" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1577374191205">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="712" y="334" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1577348383291" />
-    <state x="598" y="122" key="CommitChangelistDialog2" timestamp="1577353643206">
+    <state x="712" y="334" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1577374191205" />
+    <state x="598" y="122" key="CommitChangelistDialog2" timestamp="1577373486254">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="598" y="122" key="CommitChangelistDialog2/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1577353643206" />
+    <state x="598" y="122" key="CommitChangelistDialog2/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1577373486254" />
     <state x="740" y="282" key="FileChooserDialogImpl" timestamp="1577347377512">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -148,5 +140,9 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1898" height="204" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1577349825558" />
+    <state x="552" y="260" key="Vcs.Push.Dialog.v2" timestamp="1577373565426">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="552" y="260" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1080@0.0.1920.1050" timestamp="1577373565426" />
   </component>
 </project>

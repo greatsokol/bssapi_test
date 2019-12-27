@@ -4,6 +4,7 @@ import {Redirect, Route, Switch} from "react-router-dom";
 import Auth from "./containers/Auth/Auth";
 import DocList from "./containers/DocList/DocList";
 import {connect} from "react-redux";
+import DocView from "./containers/DocView/DocView";
 
 class App extends Component {
   render () {
@@ -20,6 +21,7 @@ class App extends Component {
           routes = (
               <Switch>
                   <Route path="/list" component={DocList}/>
+                  <Route path="/doc/:docid" component={DocView}/>
                   <Redirect to="/list"/>
               </Switch>
           );

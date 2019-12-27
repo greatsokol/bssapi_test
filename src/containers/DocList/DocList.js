@@ -3,12 +3,55 @@ import classes from './DocList.css';
 import {connect} from "react-redux";
 import {getList} from "../../store/actions/doclist";
 import Loader from "../../components/Loader/Loader";
+import DocLine from "../../components/DocLine/DocLine";
 
 class DocList extends Component {
+
+    state = {
+        selectedRecordId : null
+    };
 
     componentDidMount() {
         this.props.getList();
     }
+
+    onClickHandler = (event) => {
+        this.setState({
+            selectedRecordId : event.target.parentNode.getAttribute('recordid')
+        });
+    };
+
+    onDoubleClickHandler = (event) => {
+        this.props.history.push(`/doc/${this.state.selectedRecordId}`);
+    };
+
+    renderOneRecord = (oneRec) => {
+        const recordId = oneRec.idr;
+        const selected = this.state.selectedRecordId === recordId;
+        return (
+            <DocLine key={recordId}
+                     selected={selected}
+                     onClick={this.onClickHandler}
+                     onDoubleClick={this.onDoubleClickHandler} oneRec={oneRec}/>
+        )
+    };
+
+    renderRecords = () => {
+        return (
+            <div>
+                <hr/>
+                <table>
+                    <tbody>
+                        {
+                            this.props.recs.rec.map((oneRec) => {
+                                return this.renderOneRecord(oneRec)
+                            })
+                        }
+                    </tbody>
+                </table>
+            </div>
+        )
+    };
 
     render() {
         return (
@@ -17,7 +60,7 @@ class DocList extends Component {
                 {
                     this.props.loading
                         ? <Loader/>
-                        : <h1>this.props.recs</h1>
+                        : this.renderRecords()
                 }
             </div>
         )

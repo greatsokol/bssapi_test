@@ -1,0 +1,20 @@
+.DocLine {
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+}
+
+.DocLine :hover{
+    background: gray;
+    color: white;
+}
+
+.DocLine td {
+    cursor: pointer;
+    padding: 0 20px 0 20px;
+}
+
+.DocLineSelected {
+    background: darkgray;
+    color: white;
+}
+
