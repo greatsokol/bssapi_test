@@ -1,15 +1,11 @@
 import React, {Component} from "react";
 import classes from './DocList.css';
 import {connect} from "react-redux";
-import {getList} from "../../store/actions/doclist";
+import {getList, selectIdr} from "../../store/actions/doclist";
 import Loader from "../../components/Loader/Loader";
 import DocLine from "../../components/DocLine/DocLine";
 
 class DocList extends Component {
-
-    state = {
-        selectedRecordId : null
-    };
 
     componentDidMount() {
         this.props.getList();
@@ -17,19 +13,18 @@ class DocList extends Component {
 
     onClickHandler = (event) => {
         event.preventDefault();
-        this.setState({
-            selectedRecordId : event.target.parentNode.getAttribute('recordid')
-        });
+        const selectedIdr = event.target.parentNode.getAttribute('recordid');
+        this.props.selectIdr(selectedIdr);
     };
 
     onDoubleClickHandler = (event) => {
         event.preventDefault();
-        this.props.history.push(`/doc/${this.state.selectedRecordId}`);
+        this.props.history.push(`/doc/${this.props.selectedIdr}`);
     };
 
     renderOneRecord = (oneRec) => {
         const recordId = oneRec.idr;
-        const selected = this.state.selectedRecordId === recordId;
+        const selected = this.props.selectedIdr === recordId;
         return (
             <DocLine key={recordId}
                      selected={selected}
@@ -59,7 +54,6 @@ class DocList extends Component {
     render() {
         return (
             <div className={classes.DocList}>
-
                 {
                     this.props.loading
                         ? <Loader/>
@@ -74,13 +68,15 @@ class DocList extends Component {
 function mapStateToProps(state) {
     return {
         loading: state.doclist.loading,
-        recs: state.doclist.recs
+        recs: state.doclist.recs,
+        selectedIdr: state.doclist.selectedIdr
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        getList : () => dispatch(getList())
+        getList : () => dispatch(getList()),
+        selectIdr: (selectedidr) => dispatch(selectIdr(selectedidr))
     }
 }
 

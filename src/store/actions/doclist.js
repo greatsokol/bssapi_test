@@ -1,5 +1,5 @@
 import axios from "../../axios/axios";
-import {DOCS_BEGIN, DOCS_ERROR, DOCS_SUCCESS} from "./actionTypes";
+import {DOCS_BEGIN, DOCS_ERROR, DOCS_SELECT, DOCS_SUCCESS} from "./actionTypes";
 
 export function getList(){
     return async dispatch =>{
@@ -37,5 +37,12 @@ function docsSuccess(recs){
     return {
         type: DOCS_SUCCESS,
         recs
+    }
+}
+
+export function selectIdr(selectedIdr){
+    return {
+        type : DOCS_SELECT,
+        selectedIdr
     }
 }
