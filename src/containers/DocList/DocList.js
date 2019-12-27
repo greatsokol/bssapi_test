@@ -5,6 +5,7 @@ import {getList, selectIdr} from "../../store/actions/doclist";
 import Loader from "../../components/Loader/Loader";
 import DocLine from "../../components/DocLine/DocLine";
 import Button from "../../components/Button/Button";
+import {logOut} from "../../store/actions/auth";
 
 class DocList extends Component {
     fieldNames = {
@@ -58,8 +59,7 @@ class DocList extends Component {
     };
 
     onLogoutHandler = () =>{
-        sessionStorage.removeItem('sid');
-        this.props.history.go('/');
+        this.props.logout();
     };
 
     renderRecords = () => {
@@ -86,7 +86,7 @@ class DocList extends Component {
         return (
             <div className={classes.DocList}>
                 {
-                    this.props.loading
+                    this.props.loading || this.props.logginout
                         ? <Loader/>
                         : this.renderRecords()
                 }
@@ -99,6 +99,7 @@ class DocList extends Component {
 function mapStateToProps(state) {
     return {
         loading: state.doclist.loading,
+        logginout: state.auth.loading,
         recs: state.doclist.recs,
         selectedIdr: state.doclist.selectedIdr
     }
@@ -107,7 +108,8 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         getList : () => dispatch(getList()),
-        selectIdr: (selectedidr) => dispatch(selectIdr(selectedidr))
+        selectIdr: (selectedidr) => dispatch(selectIdr(selectedidr)),
+        logout: () => dispatch(logOut())
     }
 }
 

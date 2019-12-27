@@ -5,7 +5,8 @@ import {
     AUTH_ERROR,
     AUTH_SUCCESS_GETPID,
     AUTH_SUCCESS,
-    AUTH_CLEAR_FAULT
+    AUTH_CLEAR_FAULT,
+    AUTH_LOGOUT_SUCCESS, AUTH_BEGIN_LOGOUT
 } from "./actionTypes";
 
 export function authGetP() {
@@ -78,5 +79,24 @@ function loggedIn(sid) {
 export function clearFault() {
     return {
         type: AUTH_CLEAR_FAULT
+    }
+}
+
+export function logOut(){
+    return async dispatch =>{
+        dispatch({
+            type:AUTH_BEGIN_LOGOUT
+        });
+        const sid = sessionStorage.getItem('sid');
+        axios.post('/user/logout', `sid=${sid}`)
+            .then(response => {
+                sessionStorage.removeItem('sid');
+                console.log(sid, 'logged out');
+                dispatch({
+                    type:AUTH_LOGOUT_SUCCESS
+                })
+            }).catch(e => {
+                console.log('logged out error', e);
+            });
     }
 }

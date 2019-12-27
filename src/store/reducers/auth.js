@@ -4,7 +4,8 @@ import {
     AUTH_SUCCESS_GETPID,
     AUTH_BEGINLOGIN,
     AUTH_SUCCESS,
-    AUTH_CLEAR_FAULT
+    AUTH_CLEAR_FAULT,
+    AUTH_LOGOUT_SUCCESS, AUTH_BEGIN_LOGOUT,
 } from "../actions/actionTypes";
 
 const initialState = {
@@ -58,6 +59,21 @@ export default function authReducer(state = initialState, action) {
             return {
                 ...state,
                 fault: false
+            }
+        }
+        case AUTH_BEGIN_LOGOUT:{
+            return {
+                ...state,
+                loading: true
+            }
+        }
+        case AUTH_LOGOUT_SUCCESS:{
+            return {
+                ...state,
+                loading: false,
+                fault: false,
+                pid: null,
+                sid: null,
             }
         }
         default:
