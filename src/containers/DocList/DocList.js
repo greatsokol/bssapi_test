@@ -40,7 +40,8 @@ class DocList extends Component {
 
     renderRecords = () => {
         return (
-            <div>
+            <div className={classes.DocListForm}>
+                <h1>Список документов</h1>
                 <hr/>
                 <table>
                     <tbody>
@@ -58,7 +59,7 @@ class DocList extends Component {
     render() {
         return (
             <div className={classes.DocList}>
-                <h1>Список документов</h1>
+
                 {
                     this.props.loading
                         ? <Loader/>
