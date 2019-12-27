@@ -6,6 +6,7 @@
 .DocLine :hover{
     background: gray;
     color: white;
+    transition: all 300ms;
 }
 
 .DocLine td {
@@ -16,5 +17,6 @@
 .DocLineSelected {
     background: darkgray;
     color: white;
+    transition: all 300ms;
 }
 
