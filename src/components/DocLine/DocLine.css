@@ -10,8 +10,13 @@
 }
 
 .DocLine td {
-    cursor: pointer;
+
     padding: 0 20px 0 20px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select:none;
+    user-select:none;
+    -o-user-select:none;
 }
 
 .DocLineSelected {
