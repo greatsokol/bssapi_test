@@ -6,6 +6,14 @@ import Loader from "../../components/Loader/Loader";
 import DocLine from "../../components/DocLine/DocLine";
 
 class DocList extends Component {
+    fieldNames = {
+        documentnumber : null,
+        documentdate : null,
+        payer : null,
+        payeraccount : null,
+        receiver : null,
+        receiveraccount : null,
+        amount : null};
 
     componentDidMount() {
         this.props.getList();
@@ -29,7 +37,22 @@ class DocList extends Component {
             <DocLine key={recordId}
                      selected={selected}
                      onClick={this.onClickHandler}
-                     onDoubleClick={this.onDoubleClickHandler} oneRec={oneRec}/>
+                     onDoubleClick={this.onDoubleClickHandler}
+                     oneRec={oneRec}
+                     fieldNames={this.fieldNames}
+            />
+        )
+    };
+
+    renderHead = () => {
+        return (
+            <thead>
+                <tr>
+                    {Object.keys(this.fieldNames).map((fieldName, index) => {
+                        return <td key={index}>{fieldName}</td>
+                    })}
+                </tr>
+            </thead>
         )
     };
 
@@ -39,6 +62,7 @@ class DocList extends Component {
                 <h1>Список документов</h1>
                 <hr/>
                 <table>
+                    {this.renderHead()}
                     <tbody>
                         {
                             this.props.recs.rec.map((oneRec) => {

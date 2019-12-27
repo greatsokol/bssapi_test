@@ -3,8 +3,12 @@ import classes from './DocLine.css'
 
 const DocLine = props => {
     const {idr} = props.oneRec;
-    const {documentnumber, documentdate, payer, payeraccount, receiver, receiveraccount, amount} = props.oneRec;
-    const oneRecord = {documentnumber, documentdate, payer, payeraccount, receiver, receiveraccount, amount};
+
+    const oneRecord = {};
+    Object.keys(props.fieldNames).map((fieldName, index) => {
+        return oneRecord[fieldName] = props.oneRec[fieldName];
+    });
+
 
     const cls = [classes.DocLine];
     if (props.selected) {
