@@ -5,6 +5,7 @@ import {
     AUTH_ERROR,
     AUTH_SUCCESS_GETPID,
     AUTH_SUCCESS,
+    AUTH_CLEAR_FAULT
 } from "./actionTypes";
 
 export function authGetP() {
@@ -71,5 +72,11 @@ function loggedIn(sid) {
     return {
         type: AUTH_SUCCESS,
         sid
+    }
+}
+
+export function clearFault() {
+    return {
+        type: AUTH_CLEAR_FAULT
     }
 }

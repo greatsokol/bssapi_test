@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import classes from './Auth.css'
 import {connect} from "react-redux";
-import {login, authGetP} from "../../store/actions/auth";
+import {login, authGetP, clearFault} from "../../store/actions/auth";
 import Button from "../../components/Button/Button";
 import Input from "../../components/Input/Input";
 import Loader from "../../components/Loader/Loader";
@@ -77,10 +77,10 @@ class Auth extends Component{
 
         this.setState({
             formControls,
-            isFormValid
-        });
+            isFormValid,
+         });
 
-
+        this.props.clearFault();
     };
 
     componentDidMount(){
@@ -143,7 +143,8 @@ function mapStateToProps(state){
 function mapDispatchToProps(dispatch) {
     return{
         authGetP: () => dispatch(authGetP()),
-        login: (loginname, password, pid) => dispatch(login(loginname, password, pid))
+        login: (loginname, password, pid) => dispatch(login(loginname, password, pid)),
+        clearFault : () => dispatch(clearFault())
     }
 }
 

@@ -3,6 +3,8 @@ export const AUTH_BEGIN_GETPID = 'AUTH_BEGIN_GETPID';
 export const AUTH_SUCCESS_GETPID = 'AUTH_SUCCESS_GETPID';
 export const AUTH_BEGINLOGIN = 'AUTH_BEGINLOGIN';
 export const AUTH_SUCCESS = 'AUTH_SUCCESS';
+export const AUTH_CLEAR_FAULT = 'AUTH_CLEAR_FAULT';
+
 
 export const DOCS_BEGIN = 'DOCS_BEGIN';
 export const DOCS_ERROR = 'DOCS_ERROR';

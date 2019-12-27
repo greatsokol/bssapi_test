@@ -1,4 +1,11 @@
-import {AUTH_ERROR, AUTH_BEGIN_GETPID, AUTH_SUCCESS_GETPID, AUTH_BEGINLOGIN, AUTH_SUCCESS} from "../actions/actionTypes";
+import {
+    AUTH_ERROR,
+    AUTH_BEGIN_GETPID,
+    AUTH_SUCCESS_GETPID,
+    AUTH_BEGINLOGIN,
+    AUTH_SUCCESS,
+    AUTH_CLEAR_FAULT
+} from "../actions/actionTypes";
 
 const initialState = {
     loading : true,
@@ -47,6 +54,12 @@ export default function authReducer(state = initialState, action) {
                 loading: false,
                 sid: action.sid
             };
+        case AUTH_CLEAR_FAULT: {
+            return {
+                ...state,
+                fault: false
+            }
+        }
         default:
             return state;
     }
