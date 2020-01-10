@@ -18,7 +18,8 @@ class DocList extends Component {
         amount : null};
 
     componentDidMount() {
-        this.props.getList();
+        console.log(this.props.currentPage);
+        this.props.getList(this.props.currentPage);
     }
 
     onClickHandler = (event) => {
@@ -62,11 +63,28 @@ class DocList extends Component {
         this.props.logout();
     };
 
+    onPrevPageHandler = () =>{
+        let prevPage = this.props.currentPage-1;
+        if(prevPage>0) {
+            this.props.getList(prevPage);
+        }
+    };
+
+    onNextPageHandler = () =>{
+        let nextPage = this.props.currentPage+1;
+        if(nextPage<=this.props.totalPages) {
+            this.props.getList(nextPage);
+        }
+    };
+
     renderRecords = () => {
         return (
             <div className={classes.DocListForm}>
                 <h1>Список документов</h1>
                 <Button type="primary" onClick={this.onLogoutHandler}>Выйти</Button>
+                <Button type="primary" onClick={this.onPrevPageHandler}>&#60;&#60;</Button>
+                <span>{this.props.currentPage}</span>
+                <Button type="primary" onClick={this.onNextPageHandler}>&#62;&#62;</Button>
                 <hr/>
                 <table>
                     {this.renderHead()}
@@ -101,13 +119,15 @@ function mapStateToProps(state) {
         loading: state.doclist.loading,
         logginout: state.auth.loading,
         recs: state.doclist.recs,
-        selectedIdr: state.doclist.selectedIdr
+        selectedIdr: state.doclist.selectedIdr,
+        currentPage: state.doclist.currentPage,
+        totalPages: state.doclist.totalPages
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        getList : () => dispatch(getList()),
+        getList : (currentPage) => dispatch(getList(currentPage)),
         selectIdr: (selectedidr) => dispatch(selectIdr(selectedidr)),
         logout: () => dispatch(logOut())
     }

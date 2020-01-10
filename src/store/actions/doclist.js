@@ -1,7 +1,7 @@
 import axios from "../../axios/axios";
 import {DOCS_BEGIN, DOCS_ERROR, DOCS_SELECT, DOCS_SUCCESS} from "./actionTypes";
 
-export function getList(){
+export function getList(currentPage){
     return async dispatch =>{
         const sid = sessionStorage.getItem('sid');
         if (sid === '' || !sid){
@@ -9,10 +9,10 @@ export function getList(){
             return;
         }
         dispatch(docsBegin());
-        axios.get(`/catalog/paydocru?sid=${sid}`)
+        axios.get(`/catalog/paydocru?sid=${sid}&pagenum=${currentPage}`)
             .then(response => {
                 const data = response.data;
-                dispatch(docsSuccess(data.recs));
+                dispatch(docsSuccess(data.recs, currentPage, Math.round(Number(data.recs.count)/data.recs.rec.length)));
             }).catch(e => {
                 console.log('getList: error', e);
                 dispatch(docsError());
@@ -33,9 +33,11 @@ function docsError(){
     }
 }
 
-function docsSuccess(recs){
+function docsSuccess(recs, currentPage, totalPages){
     return {
         type: DOCS_SUCCESS,
+        currentPage,
+        totalPages,
         recs
     }
 }

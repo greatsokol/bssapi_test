@@ -9,7 +9,7 @@ import {
 } from "../actions/actionTypes";
 
 const initialState = {
-    loading : true,
+    loading : false,
     pid : null,
     sid : null,
     fault: false

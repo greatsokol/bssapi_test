@@ -4,6 +4,8 @@ const initialState = {
     loading : true,
     fault: false,
     selectedIdr : null,
+    currentPage: 1,
+    totalPages: 0,
     recs: {}
 };
 
@@ -14,6 +16,8 @@ export default function docListReducer(state = initialState, action) {
                 ...state,
               loading: true,
               fault: false,
+              currentPage: 1,
+              totalPages: 0,
               recs: {}
             };
         case DOCS_ERROR:
@@ -21,6 +25,8 @@ export default function docListReducer(state = initialState, action) {
                 ...state,
                 loading: false,
                 fault: true,
+                currentPage: 1,
+                totalPages: 0,
                 recs: {}
             };
         case DOCS_SUCCESS:
@@ -28,6 +34,8 @@ export default function docListReducer(state = initialState, action) {
                 ...state,
                 loading: false,
                 fault: false,
+                currentPage: action.currentPage,
+                totalPages: action.totalPages,
                 recs: action.recs
             };
         case DOCS_SELECT:
